@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>id</title>
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<style type="text/css">
+	body {
+			font-family:'verdana';
+			position: relative;
+			top: 100px;
+
+		}
+		.id-card-holder {
+			width: 400px;
+		    padding: 4px;
+		    margin: 0 auto;
+		    background-color: #1f1f1f;
+		    border-radius: 5px;
+		    position: relative;
+		}
+		.id-card-holder:after {
+		    content: '';
+		    width: 7px;
+		    display: block;
+		    height: 150px;
+		    position: absolute;
+		    top: 105px;
+		    border-radius: 0 5px 5px 0;
+		}
+		.id-card-holder:before {
+		    content: '';
+		    width: 7px;
+		    display: block;
+		    height: 150px;
+		    position: absolute;
+		    top: 105px;
+		    left: 222px;
+		    border-radius: 5px 0 0 5px;
+		}
+		.id-card {
+			
+			background-color: white;
+			padding: 100px;
+			border-radius: 10px;
+			box-shadow: 0 0 1.5px 0px #b9b9b9;
+		}
+		.id-card img {
+			margin: 0 auto;
+		}
+		.header img {
+			width: 100px;
+    		margin-top: 15px;
+		}
+		.photo img {
+			width: 80px;
+    		margin-top: 15px;
+		}
+		h2 {
+			font-size: 15px;
+			margin: 5px 0;
+		}
+		h3 {
+			font-size: 12px;
+			margin: 2.5px 0;
+			font-weight: 300;
+		}
+		.qr-code img {
+			width: 150px;
+		}
+		p {
+			font-size: 5px;
+			margin: 2px;
+		}
+</style>
+
+
+</head>
+<body>
+<div class="w3-top">
+  <div class="w3-bar w3-black w3-card">
+    <a class="w3-bar-item w3-button w3-padding-large w3-hide-medium w3-hide-large w3-right" title="Toggle Navigation Menu"><i class="fa fa-bars"></i></a>
+    <a href="index2.html" class="w3-bar-item w3-button w3-padding-large">HOME</a>
+    <a href="gallery.html" class="w3-bar-item w3-button w3-padding-large w3-hide-small">GALLERY</a>
+    <a href="random.html" class="w3-bar-item w3-button w3-padding-large w3-hide-small">MEMBERSHIP</a>
+    <a href="features.html" class="w3-bar-item w3-button w3-padding-large w3-hide-small">FEATURES</a>
+    <a href="about2.html" class="w3-bar-item w3-button w3-padding-large w3-hide-small">ABOUT</a>
+    </div>
+</div>
+	<div class="id-card-tag"></div>
+	<div class="id-card-tag-strip"></div>
+	<div class="id-card-hook"></div>
+	<div class="id-card-holder">
+		<div class="id-card">
+			<div class="header">
+				<h3>you got membership...</h3>
+			</div>
+			<div class="photo">
+				<p>for further visit..</p>
+			</div>
+			<p>
+				<strong id="GFG_Fun();">ref's id</strong>
+			</p>
+			<p id="GFG_UP" 
+              style="font-size: 19px; 
+              font-weight: bold;"> 
+            </p> 
+			<div class="qr-code">
+				<img src="https://chart.googleapis.com/chart?chs=150x150&amp;cht=qr&amp;chl=https://www.mrc-productivity.com/techblog/?p=1172" />
+			</div>
+			<p id="GFG_DOWN" 
+              style="color: white; 
+              font-size: 24px;  
+              font-weight: bold;"> 
+            </p> 
+			<h3><b>congratulations...</h3>
+			<hr>
+			<p><strong>"BODLIEAN LIBRARY"</strong>LONDON UK<p>
+			<p>BROAD STREET<strong id="GFG_Fun();">you got membership...</strong></p>
+   <script> 
+        var up = document.getElementById('GFG_UP'); 
+        var down = document.getElementById('GFG_DOWN'); 
+        up.innerHTML =  
+          "your ref's id is"; 
+  
+        function GFG_Fun() { 
+            down.innerHTML = 
+              Math.random().toString(36).slice(2); 
+        } 
+    </script> 		
+
+		</div>
+	</div>
+</body>
+</html>

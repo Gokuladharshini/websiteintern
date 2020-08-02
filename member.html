@@ -1,0 +1,160 @@
+<?php
+  use PHPMailer\PHPMailer\PHPMailer;
+  use PHPMailer\PHPMailer\Exception;
+
+  require 'vendor/phpmailer/phpmailer/src/Exception.php';
+  require 'vendor/phpmailer/phpmailer/src/PHPMailer.php';
+  require 'vendor/phpmailer/phpmailer/src/SMTP.php';
+
+  // Include autoload.php file
+  require 'vendor/autoload.php';
+  // Create object of PHPMailer class
+  $mail = new PHPMailer(true);
+
+  $output = '';
+
+  if (isset($_POST['submit'])) {
+    $name = $_POST['name'];
+    $email = $_POST['email'];
+    $subject = $_POST['subject'];
+    $message = $_POST['message'];
+
+    try {
+      $mail->isSMTP();
+      //$mail->Host = 'smtp.gmail.com';
+      $mail->SMTPAuth = true;
+      // Gmail ID which you want to use as SMTP server
+      $mail->Username = 'charanrio08@gmail.com';
+      // Gmail Password
+      $mail->Password = 'Santhiyadevi@07';
+      $mail->SMTPSecure = PHPMailer::ENCRYPTION_STARTTLS;
+      $mail->Port = 587;
+
+      // Email ID from which you want to send the email
+      $mail->setFrom('charanrio08@gmail.com');
+      // Recipient Email ID where you want to receive emails
+      $mail->addAddress('mackmay07@gmail.com');
+
+      $mail->isHTML(true);
+      $mail->Subject = 'Form Submission';
+      $mail->Body = "<h3>Name : $name <br>Email : $email <br>Message : $message</h3>";
+
+      $mail->send();
+      $output = '<div class="alert alert-success">
+                  <h5>Thankyou! for contacting us, We\'ll get back to you soon!</h5>
+                </div>';
+    } catch (Exception $e) {
+      $output = '<div class="alert alert-danger">
+                  <h5>' . $e->getMessage() . '</h5>
+                </div>';
+    }
+  }
+
+?>
+
+<html>
+<head>
+<title> transparent and responsive sign up form</title>
+<link rel="stylesheet" href="mystyle.css">
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<style type="text/css">
+   body{
+   background:#000d33;
+   background-size:cover;
+} 
+.wrap{
+   max-width:350Px;
+   border-radius:20px;
+   margin:auto;
+   background:rgba(0,0,0,0.8);
+   box-sizing:border-box;
+   padding:40px;
+   color:#fff;
+   margin-top:100px;
+}
+h2{
+   text-align:center;
+}
+input[type=text],input[type=Password]{
+   width:100;
+   box-sizing:border-box;
+   padding:12px 5px;
+   background:rgba(0,0,0,0.10);
+   outline:none;
+   border:none;
+   border-bottom:1px dotted #fff;
+   color:#fff;
+   border-radius:5px;
+   margin:5px;
+   font-weight:bold;
+
+}
+input[type=submit]{
+   width:100%;
+   box-sizing:border-box;
+   padding:10px 0;
+   margin-top:30px;
+   outline:none;
+   border:none;
+   background:#60adde;
+   opacity:0.7;
+   border-radius:20px;
+   font-size:20px;
+   color:#fff;
+}
+input[type=submit]:hover{
+   background:#003366;
+   opacity:0.7;
+}
+</style>
+</head>
+<body style="background-image: url('https://www.thetimes.co.uk/imageserver/image/%2Fmethode%2Ftimes%2Fprodmigration%2Fweb%2Fbin%2F4154e115-713e-303a-a15f-2ad927668d62.jpg?crop=1500%2C1000%2C0%2C0&resize=1180');">
+<div class="w3-top">
+  <div class="w3-bar w3-black w3-card">
+    <a class="w3-bar-item w3-button w3-padding-large w3-hide-medium w3-hide-large w3-right" title="Toggle Navigation Menu"><i class="fa fa-bars"></i></a>
+    <a href="index2.html" class="w3-bar-item w3-button w3-padding-large">HOME</a>
+    <a href="gallery.html" class="w3-bar-item w3-button w3-padding-large w3-hide-small">GALLERY</a>
+    <a href="member.html" class="w3-bar-item w3-button w3-padding-large w3-hide-small">MEMBERSHIP</a>
+    <a href="features.html" class="w3-bar-item w3-button w3-padding-large w3-hide-small">FEATURES</a>
+    <a href="about2.html" class="w3-bar-item w3-button w3-padding-large w3-hide-small">ABOUT</a>
+    </div>
+</div>
+<div class="wrap">
+   <h2>LIBRARY FORM</h2>
+   <form id='contact-form' method="POST" action="#">
+   <input type="text" placeholder="First name:"required>
+   <input type="text" placeholder="Last name:"required>
+   <input type="email" placeholder="Email:"required>
+   <input type="Password" placeholder="Password:"required>
+   <input type="text" placeholder="Organisation:"required>
+   <input type="text" placeholder="Mobile no :"required>
+   <input type="text" placeholder="Address.."required>
+
+	  <h4><label> Interested genres:</label><br></h4>
+   <select name="interseting jouners" width="50%"/>
+   <option value="--select--">--select--</option>
+   <option value="FICTION">FICTION</option>
+   <option value="NONFICTION">NONFICTION</option>
+   <option value="DRAMA">DRAMA</option>
+   <option value="FOLKTALE">FOLKTALE</option>
+   </select>
+   <button onclick="GFG_Fun();">SUBMIT</button>
+   </form>
+   <script> 
+        var up = document.getElementById('GFG_UP'); 
+        var down = document.getElementById('GFG_DOWN'); 
+        up.innerHTML =  
+          'Click on the button to generate alpha-numeric string'; 
+  
+        function GFG_Fun() { 
+            down.innerHTML = 
+              Math.random().toString(36).slice(2); 
+        } 
+    </script> 
+   </div>
+
+   </body>
+   
+</html> 
